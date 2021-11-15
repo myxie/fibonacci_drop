@@ -1,12 +1,12 @@
 import pytest
 
-from fibonacci_drop import MyAppDROP, MyDataDROP
+from fibonacci_drop import FibonacciAppDrop, MyDataDROP
 
 given = pytest.mark.parametrize
 
 
 def test_myApp_class():
-    assert MyAppDROP("a", "a").run() == "Hello from MyAppDROP"
+    assert FibonacciAppDrop("a", "a").run() == 196418
 
 
 def test_myData_class():

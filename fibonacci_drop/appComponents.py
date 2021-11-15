@@ -26,6 +26,8 @@ from dlg.meta import (
 
 logger = logging.getLogger(__name__)
 
+MAX_FIB = 27
+
 ##
 # @brief MyApp
 # @details Template app for demonstration only!
@@ -50,7 +52,7 @@ logger = logging.getLogger(__name__)
 # refer to the Developer Guide for more information.
 
 
-class MyAppDROP(BarrierAppDROP):
+class FibonacciAppDrop(BarrierAppDROP):
     """A template BarrierAppDrop that doesn't do anything at all
     Add your functionality in the run method and optional additional
     methods.
@@ -67,10 +69,14 @@ class MyAppDROP(BarrierAppDROP):
     sleepTime = dlg_float_param("sleep time", 0)
 
     def initialize(self, **kwargs):
-        super(MyAppDROP, self).initialize(**kwargs)
+        super(FibonacciAppDrop, self).initialize(**kwargs)
 
     def run(self):
         """
         The run method is mandatory for DALiuGE application components.
         """
-        return f"Hello from {self.__class__.__name__}"
+        a, b = 0, 1
+        for i in range(0, MAX_FIB):
+            a, b = b, a + b
+        return a
+
