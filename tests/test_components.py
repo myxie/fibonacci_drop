@@ -1,6 +1,6 @@
 import pytest
 
-from project_name import MyAppDROP, MyDataDROP
+from fibonacci_drop import MyAppDROP, MyDataDROP
 
 given = pytest.mark.parametrize
 
